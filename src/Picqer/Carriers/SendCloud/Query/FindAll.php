@@ -23,13 +23,17 @@ trait FindAll
 
     public function collectionFromResult($result)
     {
-        $collection = [];
+          $collection = [];
 
-        foreach ($result[$this->namespaces['plural']] as $r) {
-            $collection[] = new self($this->connection(), $r);
-        }
+          $results = isset($result[$this->namespaces['plural']]) 
+                         ? $result[$this->namespaces['plural']] 
+                         : $result;
 
-        return $collection;
+          foreach ($results as $r) {
+               $collection[] = new self($this->connection(), $r);
+          }
+
+          return $collection;
     }
 
 }

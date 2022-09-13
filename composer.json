@@ -1,5 +1,5 @@
 {
-    "name": "picqer/sendcloud-php-client",
+    "name": "nouce/sendcloud-php-client",
     "type": "library",
     "description": "A PHP Client for the SendCloud API",
     "keywords": [

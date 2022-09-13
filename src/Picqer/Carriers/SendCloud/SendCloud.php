@@ -46,6 +46,16 @@ class SendCloud
         return new SenderAddress($this->connection);
     }
 
+    public function shippingProduct(): ShippingProduct
+    {
+        return new ShippingProduct($this->connection);
+    }
+
+    public function shippingPrices(): ShippingPrices
+    {
+        return new ShippingPrices($this->connection);
+    }
+
     /**
      * SenderAddress Resource
      *
