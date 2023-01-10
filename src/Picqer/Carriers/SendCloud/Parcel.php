@@ -90,6 +90,14 @@ class Parcel extends Model
         'apply_shipping_rules',
         'shipping_method_checkout_name',
         'requestShipment', // Special one to create new shipments
+        'from_name',
+        'from_address_1',
+        'from_house_number',
+        'from_postal_code',
+        'from_country',
+        'from_city',
+        'from_email',
+        'from_telephone'
     ];
 
     protected $url = 'parcels';

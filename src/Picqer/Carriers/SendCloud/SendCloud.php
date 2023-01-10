@@ -31,11 +31,6 @@ class SendCloud
         return new Parcel($this->connection);
     }
 
-    public function shippingMethods(): ShippingMethod
-    {
-        return new ShippingMethod($this->connection);
-    }
-
     public function users(): User
     {
         return new User($this->connection);
@@ -49,6 +44,11 @@ class SendCloud
     public function shippingProduct(): ShippingProduct
     {
         return new ShippingProduct($this->connection);
+    }
+
+    public function shippingMethod(): ShippingMethod
+    {
+        return new ShippingMethod($this->connection);
     }
 
     public function shippingPrices(): ShippingPrices

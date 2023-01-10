@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Connection
 {
-    private $apiUrl = 'https://panel.sendcloud.sc/api/v2/';
+    private $apiUrl;
     private $apiKey;
     private $apiSecret;
     private $partnerId;
@@ -28,6 +28,7 @@ class Connection
 
     public function __construct(string $apiKey, string $apiSecret, ?string $partnerId = null)
     {
+        $this->apiUrl = config('services.sendcloud.test_mode') ? config('services.sendcloud.test_url') : config('services.sendcloud.url');
         $this->apiKey = $apiKey;
         $this->apiSecret = $apiSecret;
         $this->partnerId = $partnerId;
@@ -83,6 +84,7 @@ class Connection
     public function get($url, $params = []): array
     {
         try {
+          ray($url);
             $result = $this->client()->get($url, ['query' => $params]);
             return $this->parseResponse($result);
         } catch (RequestException $e) {
